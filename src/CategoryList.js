@@ -2,9 +2,8 @@ import React, { Component } from "react";
 import { ListGroup, ListGroupItem } from "reactstrap";
 
 export default class CategoryList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
+
+    state = {
       categories: [
         {
           categoryId: 1,
@@ -16,7 +15,7 @@ export default class CategoryList extends Component {
         },
       ],
     };
-  }
+
 
   render() {
     return (
