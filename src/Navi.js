@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, Component } from "react";
 import {
   Collapse,
   Navbar,
@@ -19,8 +19,11 @@ function Navi(args) {
 
   const toggle = () => setIsOpen(!isOpen);
 
+
+
   return (
     <div>
+   
       <Navbar {...args}>
         <NavbarBrand href="/">Shopping App</NavbarBrand>
         <NavbarToggler onClick={toggle} />
@@ -36,9 +39,14 @@ function Navi(args) {
             </NavItem>
             <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
-                Options
+                Options - {this.propms.cart.length}
               </DropdownToggle>
-        
+              <DropdownMenu>
+                <DropdownItem>Option 1</DropdownItem>
+                <DropdownItem>Option 2</DropdownItem>
+                <DropdownItem divider />
+                <DropdownItem>Reset</DropdownItem>
+              </DropdownMenu>
             </UncontrolledDropdown>
           </Nav>
           <NavbarText>Simple Text</NavbarText>
