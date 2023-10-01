@@ -5,7 +5,7 @@ import ProductList from "./ProductList";
 import { Container, Row, Col } from "reactstrap";
 
 export default class App extends Component {
-  state = { currentCategory: "" }
+  state = { currentCategory: "" };
 
   changeCategory = category => {
     this.setState({ currentCategory: category.categoryName });
@@ -29,7 +29,10 @@ export default class App extends Component {
               />
             </Col>
             <Col xs="9">
-              <ProductList info={infoProduct} />
+              <ProductList
+                currentCategory={this.state.currentCategory}
+                info={infoProduct}
+              />
             </Col>
           </Row>
         </Container>

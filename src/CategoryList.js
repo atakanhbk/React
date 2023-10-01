@@ -13,10 +13,7 @@ export default class CategoryList extends Component {
         categoryName: "Condiments",
       },
     ],
-   
   };
-
-  
 
   render() {
     return (
