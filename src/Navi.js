@@ -39,7 +39,7 @@ function Navi(args) {
             </NavItem>
             <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
-                Options - {args.cart.length}
+                Options -  {args.cart.length}
               </DropdownToggle>
               <DropdownMenu>
                 <DropdownItem>Option 1</DropdownItem>
