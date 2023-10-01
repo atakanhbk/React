@@ -5,10 +5,12 @@ import ProductList from "./ProductList";
 import { Container, Row, Col } from "reactstrap";
 
 export default class App extends Component {
-  changeCategory = (category) => {
+  state = { currentCategory: "" }
+
+  changeCategory = category => {
     this.setState({ currentCategory: category.categoryName });
   };
-  render(){
+  render() {
     let infoCategory = { title: "Category List" };
     let infoProduct = { title: "Product List" };
     return (
@@ -17,10 +19,14 @@ export default class App extends Component {
           <Row>
             <Navi />
           </Row>
-  
+
           <Row>
             <Col xs="3">
-              <CategoryList info={infoCategory} />
+              <CategoryList
+                currentCategory={this.state.currentCategory}
+                changeCategory={this.changeCategory}
+                info={infoCategory}
+              />
             </Col>
             <Col xs="9">
               <ProductList info={infoProduct} />
