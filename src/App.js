@@ -5,20 +5,26 @@ import ProductList from "./ProductList";
 import { Container, Row, Col } from "reactstrap";
 
 export default class App extends Component {
-  state = { currentCategory: "", products:[] };
+  state = { currentCategory: "", products: [] };
 
-  changeCategory = category => {
+  changeCategory = (category) => {
     this.setState({ currentCategory: category.categoryName });
+    this.getProducts(category.id);
   };
 
-  componentDidMount(){
+  componentDidMount() {
     this.getProducts();
   }
 
-  getProducts() {
-    fetch("http://localhost:3000/products")
-    .then(response => response.json())
-    .then(data => this.setState({products:data}));
+  getProducts(id) {
+    let url = "http://localhost:3000/products";
+    if (id) {
+      url += "?categoryId=" + id;
+    }
+
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => this.setState({ products: data }));
   }
 
   render() {
